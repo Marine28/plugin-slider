@@ -9,6 +9,16 @@ Author URI:
 text Domain: slider
 */
 
+function eemi_oop_init() {
+	load_plugin_textdomain(
+		'slider',
+		false,
+		dirname( plugin_basename( __FILE__ ) ) . '/languages'
+	);
+}
+
+add_action( 'plugins_loaded', 'eemi_oop_init' );
+
 add_action('init', 'slider_init');
 
 function slider_init(){
@@ -16,14 +26,14 @@ function slider_init(){
 	$labels = array(
 		'name' => 'Slide',
 		'singular_name' => 'Slide',
-		'add_new' => 'Ajouter un slide',
-		'add_new_item' => 'Editer un Slide',
-		'edit_item' => 'Modifier un slide',
-		'new_item' => 'Nouvelle slide',
-		'view_item' => 'Voir l\' Slide',
-		'search_items' =>'Recherche un slide', 
-		'not_found' => 'Aucun Slide',
-		'not_found_in_trash' => 'Auncun slide dans la corbeille',
+		'add_new' => __('Ajouter un slide', 'slider'),
+		'add_new_item' => __('Editer un Slide','slider'),
+		'edit_item' => __('Modifier un slide', 'slider'),
+		'new_item' => __('Nouvelle slide', 'slider'),
+		'view_item' => __('Voir l\' Slide', 'slider'),
+		'search_items' =>__('Recherche un slide', 'slider'),
+		'not_found' => __('Aucun Slide', 'slider'),
+		'not_found_in_trash' => __('Auncun slide dans la corbeille', 'slider'),
 		'parent_item_colon' => '',
 		'menu_name' => 'Slides',
 		'mounth' => 3,
