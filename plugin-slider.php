@@ -86,9 +86,11 @@ function affiche_slider($limit = 10){
 
 		the_post_thumbnail('slider', array('style' => 'width: 1000px!important;'));
 		}
+
+		wp_reset_postdata(); 
 		echo'</div>';
 }
 
-add_action('wp_head', 'affiche_slider');
+add_action('wp_footer', 'affiche_slider');
 
 
